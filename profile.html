@@ -1,0 +1,204 @@
+<!DOCTYPE html><html>
+    <head>
+        <title>박채연의 소소한 정보들</title>
+        <meta charset="UTF-8">
+        <meta name="author" content="박채연">
+        <link rel="stylesheet" type="text/css" href="extern.css"/>
+    </head>
+    <body id="background">
+        <script type="text/javascript">
+        function darkmode(id, m) {
+            if(m == 'd'){
+                document.getElementById(id).style.background = '#191714';
+                document.getElementById("h1").style.color = '#ece2d8';
+                document.getElementById("title").style.background="#191714";
+                document.getElementById("menu_box").style.background ='#DED2C8';
+                document.getElementById("cpbox").style.color = '#DED2C8';
+                document.getElementById("cpbox").style.background = '#3d3d3d';
+                document.getElementById("greeting").style.color = "#f4f2f1";
+            }
+            else{
+                document.getElementById(id).style.background = '#f4f2f1';
+                document.getElementById("h1").style.color = '#403C33';
+                document.getElementById("title").style.background ='#e7d7cf';
+                document.getElementById("menu_box").style.background ='';     
+                document.getElementById("cpbox").style.color = '#3d3d3d'; 
+                document.getElementById("cpbox").style.background = '#DED2C8'; 
+                document.getElementById("greeting").style.color = "#3d3d3d";      
+            }
+        }
+            
+            </script> 
+            <header>
+                <div id="title">
+                    <h1 id="h1">박채연의 소소한 정보들</h1>
+                </div>
+                <table id='menu_box' width="100%"> 
+                    <tr>
+                        <td><a href="who.html"><p>나는 누구인가</p></a></td>
+                        <td><a href="profile.html">프로필</a></td>
+                        <td><a href="interest.html">관심사</a></td>
+                        <td><a href="bucket_list.html">버킷리스트</a></td>
+                        <td><a href="guest.html">방명록</a></td>
+                    </tr>
+                </table>
+    
+                <nav>메뉴 <!--좌측메뉴바-->
+                    <div id="menu_box_L">
+                        <a href="index.html">홈</a>
+                        <a href="who.html">나는 누구인가</a>
+                        <a href="profile.html">프로필</a>
+                        <a href="interest.html">관심사</a>
+                        <a href="bucket_list.html">버킷리스트</a>
+                        <a href="guest.html">방명록</a>
+                    </div> 
+                    <button id="sign" onclick="window.open('signin.html');">회원가입</button>
+                    <div id="mode">                  
+                        <button onclick="darkmode('background', 'd');">☾ 다크모드</button>
+                        <button onclick="darkmode('background', 'l');">☼ 라이트모드</button><br><br>
+                    </div>
+                </nav>                        
+            </header>
+
+        <div class="width">
+            <article>
+                <div class="p_file">
+                    <section>
+                    <div id="self">제 이름은 박채연입니다.<br>
+                        직업은 <span id="f_job"> 학생</span>이구요, <br>
+                        취미는 <span id="f_hobby">독서, 음악감상</span>입니다.<br>
+                        지금은 <span id="f_family">부모님, 동생</span>과/와 함께 살고 있습니다.
+                    </div>
+                    <form id="show_form" method="get" action="profile.html">
+                        <fieldset>
+                            <legend>암호 입력</legend>
+                            <p>값을 변경하려면 암호를 입력하세요.<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;암호 : <input id="pw1" type="password" name="pw" required>
+                            </p>
+                            <div class="profile_button">
+                                <input type="button" value="암호확인" onclick="changevalue();"/>&nbsp;
+                            </div>
+                        </fieldset><hr>
+                    </form>
+                    </section>
+
+                    <form id="change_form" method="get" action="profile.html" style="visibility: hidden;">
+                        <fieldset>
+                            <legend>옵션선택</legend>
+                            <p>직업 : 
+                            <select name="job" size='1'>
+                                <option id="job0" value="학생" selected>학생</option>
+                                <option id="job1" value="회사원">회사원</option>
+                                <option id="job2" value="사업가">사업가</option>
+                                <option id="job3" value="여행가">여행가</option>
+                                <option id="job4" value="무직">무직</option>
+                            </select></p>
+                            <p>취미(중복선택) : 
+                                <input id="input0" type="checkbox" name="hobby" value="독서"/>독서
+                                <input id="input1" type="checkbox" name="hobby" value="음악감상"/>음악감상
+                                <input id="input2" type="checkbox" name="hobby" value="영화감상"/>영화감상
+                                <input id="input3" type="checkbox" name="hobby" value="베이킹"/>베이킹
+                            </p>             
+                            <p>같이 사는 가족:
+                                <input id="fam0" type="checkbox" name="family" value="부모님"/>부모님
+                                <input id="fam1" type="checkbox" name="family" value="동생"/>동생
+                                <input id="fam2" type="checkbox" name="family" value="할머니"/>할머니
+                                <input id="fam3" type="checkbox" name="family" value="고양이"/>고양이
+                            </p>
+                        </fieldset>
+
+                        <fieldset>
+                            <legend>암호 입력</legend>
+                            <p>값을 저장하려면 암호를 한 번 더 입력하세요.<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;암호 : <input id="pw2" type="password" name="pw" required>
+                            </p>
+                        </fieldset><hr>
+                        <div class="profile_button">    
+                            <input type="submit" value="전송하기">&nbsp;
+                            <input type="reset" value="초기화">&nbsp;
+                            <input type="button" value="변경하기" onclick="pwtest();"/>&nbsp;
+                        </div>   
+                    </form>
+                </div>
+            </article>
+        </div>
+    <script type="text/javascript">
+        function changevalue(){
+            var change = document.getElementById("pw1").value;
+            if(change == 1012){
+                document.getElementById("change_form").style.visibility = "visible";
+                document.getElementById("show_form").style.visibility = "hidden";
+            }
+            else{
+                alert("잘못된 암호가 입력되었습니다.");
+            }
+        }
+
+        function pwtest() {
+            var pass = document.getElementById("pw2").value;
+            if (pass == 1012) {
+                check3(); /*암호가 맞을 때만 check3 함수 실행*/
+            }
+            else {alert("잘못된 암호가 입력되었습니다.");}  
+        }
+
+
+        function check3(){              /*직업폼+취미폼+가족폼*/
+            /*직업 폼*/
+            var i=0;
+            var v_job;
+
+            while(i < 5){
+                j_id = "job"+i;
+                slt = document.getElementById(j_id).selected;
+                v_job = document.getElementById(j_id).value;
+                if(slt){
+                    document.getElementById('f_job').innerHTML = v_job;
+                }
+                i+=1;                 
+            }
+
+            /*취미 폼*/
+            var i=0;
+            var h_id;             
+            var chk;                
+            var v_hobby;
+                
+            document.getElementById('f_hobby').innerHTML = "";
+            for(i=0; i<4; i++){
+                h_id = "input"+i;
+                chk = document.getElementById(h_id).checked;
+                v_hobby = document.getElementById(h_id).value;
+                if(chk) {
+                    document.getElementById('f_hobby').innerHTML += v_hobby + " ";
+                }
+            }
+
+            /*가족 폼*/
+            var j=0;
+            var f_id;
+            var v_family;
+
+            document.getElementById('f_family').innerHTML = "";
+
+            for(j=0; j<4; j++){
+                f_id = "fam"+j;
+                chk = document.getElementById(f_id).checked;
+                v_family = document.getElementById(f_id).value;
+                if(chk) {
+                    document.getElementById('f_family').innerHTML += v_family + " ";
+                }
+            }
+        }        
+    
+    
+    </script>
+
+    </body>
+    <footer>  
+        <div id="cpbox">
+            이 페이지는 박채연에 의해 작성되었습니다 &nbsp;&nbsp;&nbsp;&nbsp;<br>
+            ⓒPark Chaeyeon&nbsp;&nbsp;&nbsp;&nbsp;
+        </div>
+    </footer>
+</html>

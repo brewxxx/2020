@@ -1,0 +1,107 @@
+<!DOCTYPE html><html>
+    <head>
+        <title>박채연의 소소한 정보들</title>
+        <meta charset="UTF-8">
+        <meta name="author" content="박채연">
+        <link rel="stylesheet" type="text/css" href="extern.css"/>
+    </head>
+    <body id="background">
+        <script type="text/javascript">
+        function darkmode(id, m) {
+            if(m == 'd'){
+                document.getElementById(id).style.background = '#191714';
+                document.getElementById("h1").style.color = '#ece2d8';
+                document.getElementById("title").style.background="#191714";
+                document.getElementById("menu_box").style.background ='#DED2C8';
+                document.getElementById("cpbox").style.color = '#DED2C8';
+                document.getElementById("cpbox").style.background = '#3d3d3d';
+                document.getElementById("greeting").style.color = "#f4f2f1";
+            }
+            else{
+                document.getElementById(id).style.background = '#f4f2f1';
+                document.getElementById("h1").style.color = '#403C33';
+                document.getElementById("title").style.background ='#e7d7cf';
+                document.getElementById("menu_box").style.background ='';     
+                document.getElementById("cpbox").style.color = '#3d3d3d'; 
+                document.getElementById("cpbox").style.background = '#DED2C8'; 
+                document.getElementById("greeting").style.color = "#3d3d3d";      
+            }
+        }
+            
+        </script>
+        <header>
+            <div id="title">
+                <h1 id="h1">박채연의 소소한 정보들</h1>
+            </div>
+            <table id='menu_box' width="100%"> 
+                <tr>
+                    <td><a href="who.html"><p>나는 누구인가</p></a></td>
+                    <td><a href="profile.html">프로필</a></td>
+                    <td><a href="interest.html">관심사</a></td>
+                    <td><a href="bucket_list.html">버킷리스트</a></td>
+                    <td><a href="guest.html">방명록</a></td>
+                </tr>
+            </table>
+
+            <nav>메뉴   
+                <div id="menu_box_L">
+                    <a href="index.html">홈</a>
+                    <a href="who.html">나는 누구인가</a>
+                    <a href="profile.html">프로필</a>
+                    <a href="interest.html">관심사</a>
+                    <a href="bucket_list.html">버킷리스트</a>
+                    <a href="guest.html">방명록</a>
+                </div> 
+                <button id="sign" onclick="window.open('signin.html');">회원가입</button>
+                <div id="mode">                  
+                    <button onclick="darkmode('background', 'd');">☾ 다크모드</button>
+                    <button onclick="darkmode('background', 'l');">☼ 라이트모드</button><br><br>
+                </div>
+            </nav>
+        </header>
+        <div class="width">
+            <form id="page" method="get" action="index.html">
+                <fieldset>
+                    <legend>회원가입</legend>
+                    <p>모든 항목을 채워주세요<br>
+                    ID : <input class='sign_set' type="text" name="ID" required/><br><br>
+                    비밀번호 : <input class='sign_set' type="password" name="password" pattern="[A-Za-z0-9]{8,15}" required/><br>
+                    <span style="font-size: 10pt; font: '나눔스퀘어_ac';"> 숫자로 된 8~15자리 번호를 입력해주세요</span><br><br><br>
+                    이름 : <input class='sign_set' type="text" name="ID" placeholder="예)홍길동" required/><br><br>
+                    생년월일 : <input class='sign_set' type="date" name="birthday" required/><br><br><br>
+                    휴대전화 : <input class='sign_set' type="tel" pattern="[0-1]{3}-[0-9]{4}-[0-9]{4}" required/><br><br>
+                    학번 : <input class='sign_set' type="text" name="studentID" pattern="[0-9]{1,15}" required/><br><br>
+                    이메일 : <input class='sign_set' type="email"  required/><br><br>
+                    <input id="agree" type="checkbox">회원가입을 동의합니다.
+                    </p>
+                
+                </fieldset><hr>       
+                <input class="sign_bt" type="submit" value="전송하기" onclick="check();" 
+                style="position: absolute; left:360px">&nbsp;
+                <input class="sign_bt" type="reset" value="초기화" 
+                style="position: absolute; left:432px">&nbsp;
+            </form>
+        </div>
+
+        <script type="text/javascript">
+        function check() {
+            var box = document.getElementById("agree").checked;
+            if (!box) {
+            alert("동의하지 않으면 회원가입을 완료할 수 없습니다.");
+            document.getElementById("page").action="signin.html"; 
+            }
+            else {
+            confirm("회원가입을 완료하시겠습니까?");
+            alert("축하합니다!\n회원가입이 완료되었습니다.");
+            }
+        }
+
+        </script>
+    </body>
+    <footer>  
+        <div id="cpbox">
+            이 페이지는 박채연에 의해 작성되었습니다 &nbsp;&nbsp;&nbsp;&nbsp;<br>
+            ⓒPark Chaeyeon&nbsp;&nbsp;&nbsp;&nbsp;
+        </div>
+    </footer>
+</html>

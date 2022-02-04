@@ -1,0 +1,158 @@
+<!DOCTYPE html><html>
+    <head>
+        <title>박채연의 소소한 정보들</title>
+        <meta charset="UTF-8">
+        <meta name="author" content="박채연">
+        <link rel="stylesheet" type="text/css" href="extern.css"/>
+    </head>
+    <body id="background">
+        <script type="text/javascript">
+        function darkmode(id, m) {
+            if(m == 'd'){
+                document.getElementById(id).style.background = '#191714';
+                document.getElementById("h1").style.color = '#ece2d8';
+                document.getElementById("title").style.background="#191714";
+                document.getElementById("menu_box").style.background ='#DED2C8';
+                document.getElementById("cpbox").style.color = '#DED2C8';
+                document.getElementById("cpbox").style.background = '#3d3d3d';
+                document.getElementById("greeting").style.color = "#f4f2f1";
+            }
+            else{
+                document.getElementById(id).style.background = '#f4f2f1';
+                document.getElementById("h1").style.color = '#403C33';
+                document.getElementById("title").style.background ='#e7d7cf';
+                document.getElementById("menu_box").style.background ='';     
+                document.getElementById("cpbox").style.color = '#3d3d3d'; 
+                document.getElementById("cpbox").style.background = '#DED2C8'; 
+                document.getElementById("greeting").style.color = "#3d3d3d";      
+            }
+        }
+            
+        </script>
+        <header>
+            <div id="title">
+                <h1 id="h1">박채연의 소소한 정보들</h1>
+            </div>
+            <table id='menu_box' width="100%"> 
+                <tr>
+                    <td><a href="who.html"><p>나는 누구인가</p></a></td>
+                    <td><a href="profile.html">프로필</a></td>
+                    <td><a href="interest.html">관심사</a></td>
+                    <td><a href="bucket_list.html">버킷리스트</a></td>
+                    <td><a href="guest.html">방명록</a></td>
+                </tr>
+            </table>
+
+            <nav>메뉴   
+                <div id="menu_box_L">
+                    <a href="index.html">홈</a>
+                    <a href="who.html">나는 누구인가</a>
+                    <a href="profile.html">프로필</a>
+                    <a href="interest.html">관심사</a>
+                    <a href="bucket_list.html">버킷리스트</a>
+                    <a href="guest.html">방명록</a>
+                </div> 
+                <button id="sign" onclick="window.open('signin.html');">회원가입</button>
+                <div id="mode">                  
+                    <button onclick="darkmode('background', 'd');">☾ 다크모드</button>
+                    <button onclick="darkmode('background', 'l');">☼ 라이트모드</button><br><br>
+                </div>
+            </nav>
+        </header>
+        <div class="width">
+            <article>
+                <section>
+                    <div id="bucket_box">
+                        <h3>죽기 전에 이루고 싶은 버킷리스트</h3>
+                        <ul class='gothic'>
+                            <li class='bold'>배워보자!</li>
+                            <ol>
+                                <li id="l1_1" onmouseover="b_display('l1_1');">모션그래픽 배우기<input class="bucket_check"type="checkbox" onclick="success('l1_1');"/></li>
+                                <li id="l1_2">애프터이펙트 배우기<input class="bucket_check"type="checkbox" onclick="success('l1_2');"/></li>
+                                <li id="l1_3">프랑스어 마스터하기<input class="bucket_check"type="checkbox" onclick="success('l1_3');"/></li>
+                            </ol><br>
+                            <li class='bold'>만들어보자!</li> 
+                            <ol>
+                                <li id="l2_1">아이폰 단축어 만들어보기<input class="bucket_check"type="checkbox" onclick="success('l2_1');"/></li>                
+                                <li id="l2_2">애플리케이션 만들어보기<input class="bucket_check"type="checkbox"  onclick="success('l2_2');"/></li>
+                                <li id="l2_3" onmouseover="b_display('l2_3');" onmouseout="b_hide('l2_3');">캘리그라피로 엽서 만들기<input class="bucket_check"type="checkbox"  onclick="success('l2_3');"/></span></li>               
+                                <li id="l2_4" onmouseover="b_display('l2_4');" onmouseout="b_hide('l2_4');">여행사진으로 포토북 만들기<input class="bucket_check"type="checkbox" onclick="success('l2_4');"/></li>
+                                <li id="l2_5">나를 기록하는 웹페이지 만들기<input class="bucket_check"type="checkbox" onclick="success('l2_5');"/></li>                              
+                            </ol><br>
+                            <li class='bold'>해보자!</li>
+                            <ol>                
+                                <li id="l3_1">배낭여행하기<input class="bucket_check"type="checkbox" onclick="success('l3_1');"/></li>
+                                <li id="l3_2">스쿠버다이빙하기<input class="bucket_check"type="checkbox" onclick="success('l3_2');"/></li>
+                                <li id="l3_3"><a href="https://www.youtube.com/embed/Jp7IizJIxg0?start=594" 
+                                    title="YouTube video player" frameborder="0" 
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                    allowfullscreen target="bucket_list">
+                                    스카이다이빙하기</a><input class="bucket_check"type="checkbox" onclick="success('l3_3');"/></li>
+                                <li id="l3_4">카메라 사기<input class="bucket_check"type="checkbox" onclick="success('l3_4');"/></li>
+                                <li id="l3_5">사진공모전 참가해보기<input class="bucket_check"type="checkbox" onclick="success('l3_5');"/></li>
+                                <li id="l3_6"><a href="https://www.youtube.com/embed/T75IKSXVXlc?start=780" 
+                                    title="YouTube video player" frameborder="0" 
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                    allowfullscreen target="bucket_list">
+                                    알래스카에서 오로라 찍기</a><input class="bucket_check"type="checkbox" onclick="success('l3_6');"/></li>
+                            </ol>    
+                        </ul>
+                        <img src="postcard.png" id="cali" width="500"/>
+                        <img src="photobook.jpg" id="photobook" width="300"/>
+                        <iframe src="" name="bucket_list" width="540" height="315"></iframe>        
+                    </div>    
+                </section>
+            </article>
+        </div>
+        <script type="text/javascript">
+        function success(id){
+            if(document.getElementById(id).style.textDecoration){
+                document.getElementById(id).style.textDecoration = "none";
+            }
+            else{
+                document.getElementById(id).style.textDecoration="line-through";
+            }
+        }
+
+        function b_display(id){
+            switch (id) {
+                case "l1_1":
+                    confirm("관련 자료를 여시겠습니까?");
+                    var win;
+                    win = window.open("https://www.youtube.com/watch?v=fWeYgDakfAc");
+                    break;
+                case "l2_3":
+                    document.getElementById("cali").style.visibility ="visible";
+                    break;
+                case "l2_4":
+                    document.getElementById("photobook").style.visibility ="visible";
+                    break;
+
+            }
+        }
+
+        function b_hide(id){
+            switch (id) {
+                case "l1_1":
+                    win.close();
+                    break;
+                case "l2_3":
+                    document.getElementById("cali").style.visibility ="hidden";
+                    break;
+                case "l2_4":
+                    document.getElementById("photobook").style.visibility ="hidden";
+                    break;
+            }
+        }
+        
+        
+        </script>
+    </body>
+    
+    <footer>  
+        <div id="cpbox">
+            이 페이지는 박채연에 의해 작성되었습니다 &nbsp;&nbsp;&nbsp;&nbsp;<br>
+            ⓒPark Chaeyeon&nbsp;&nbsp;&nbsp;&nbsp;
+        </div>
+    </footer>
+</html>

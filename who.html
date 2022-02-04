@@ -1,0 +1,114 @@
+<!DOCTYPE html><html>
+    <head>
+        <title>박채연의 소소한 정보들</title>
+        <meta charset="UTF-8">
+        <meta name="author" content="박채연">
+        <link rel="stylesheet" type="text/css" href="extern.css"/>
+    </head>
+    <body id="background">
+        <script type="text/javascript">
+        function darkmode(id, m) {
+            if(m == 'd'){
+                document.getElementById(id).style.background = '#191714';
+                document.getElementById("h1").style.color = '#ece2d8';
+                document.getElementById("title").style.background="#191714";
+                document.getElementById("menu_box").style.background ='#DED2C8';
+                document.getElementById("cpbox").style.color = '#DED2C8';
+                document.getElementById("cpbox").style.background = '#3d3d3d';
+                document.getElementById("greeting").style.color = "#f4f2f1";
+            }
+            else{
+                document.getElementById(id).style.background = '#f4f2f1';
+                document.getElementById("h1").style.color = '#403C33';
+                document.getElementById("title").style.background ='#e7d7cf';
+                document.getElementById("menu_box").style.background ='';     
+                document.getElementById("cpbox").style.color = '#3d3d3d'; 
+                document.getElementById("cpbox").style.background = '#DED2C8'; 
+                document.getElementById("greeting").style.color = "#3d3d3d";      
+            }
+        }
+            
+        </script>
+        <header>
+            <div id="title">
+                <h1 id="h1">박채연의 소소한 정보들</h1>
+            </div>
+            <table id='menu_box' width="100%"> 
+                <tr>
+                    <td><a href="who.html"><p>나는 누구인가</p></a></td>
+                    <td><a href="profile.html">프로필</a></td>
+                    <td><a href="interest.html">관심사</a></td>
+                    <td><a href="bucket_list.html">버킷리스트</a></td>
+                    <td><a href="guest.html">방명록</a></td>
+                </tr>
+            </table>
+
+            <nav>메뉴   
+                <div id="menu_box_L">
+                    <a href="index.html">홈</a>
+                    <a href="who.html">나는 누구인가</a>
+                    <a href="profile.html">프로필</a>
+                    <a href="interest.html">관심사</a>
+                    <a href="bucket_list.html">버킷리스트</a>
+                    <a href="guest.html">방명록</a>
+                </div> 
+                <button id="sign" onclick="window.open('signin.html');">회원가입</button>
+                <div id="mode">                  
+                    <button onclick="darkmode('background', 'd');">☾ 다크모드</button>
+                    <button onclick="darkmode('background', 'l');">☼ 라이트모드</button><br><br>
+                </div>
+            </nav>
+        </header>
+
+        <div class="width">
+            <article>
+                <section class="align">
+                    <div id = "life">
+                        <h3>박채연의 출생부터 오늘까지</h3>
+                    
+                        <table width="100%">
+                        <tr>
+                            <td>2001.01.30</td>
+                            <td>경북 영주에서 출생</td>
+                        </tr>
+                        <tr>
+                            <td>2008.03.03</td>
+                            <td>신흥초등학교 입학</td>
+                        </tr>
+                        <tr>
+                            <td>2014.02.14</td>
+                            <td>대구 성동초등학교 졸업</td>
+                        </tr>
+                        <tr>
+                            <td>2014.03.03</td>
+                            <td>정화중학교 입학</td>
+                        </tr>
+                        <tr>
+                            <td>2017.02.09</td>
+                            <td>정화중학교 졸업</td>
+                        </tr>
+                        <tr>
+                            <td>2017.03.02</td>
+                            <td>정화여자고등학교 입학</td>
+                        </tr>
+                        <tr>
+                            <td>2020.02.06</td>
+                            <td>정화여자고등학교 졸업</td>
+                        </tr>
+                        <tr>
+                            <td>2020.03.02<br>~</td>
+                            <td>숙명여자대학교 기계시스템학부 재학</td>
+                        </tr>
+                        </table>
+                    </div>
+                </section>
+            </article>   
+        </div>
+    </body>
+    <footer>  
+        <div id="cpbox">
+            이 페이지는 박채연에 의해 작성되었습니다 &nbsp;&nbsp;&nbsp;&nbsp;<br>
+            ⓒPark Chaeyeon&nbsp;&nbsp;&nbsp;&nbsp;
+        </div>
+    </footer>
+</html>

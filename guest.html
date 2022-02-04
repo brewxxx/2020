@@ -1,0 +1,141 @@
+<!DOCTYPE html><html>
+    <head>
+        <title>박채연의 소소한 정보들</title>
+        <meta charset="UTF-8">
+        <meta name="author" content="박채연">
+        <link rel="stylesheet" type="text/css" href="extern.css"/>
+    </head>
+    <body id="background">
+        <script type="text/javascript">
+        function darkmode(id, m) {
+            if(m == 'd'){
+                document.getElementById(id).style.background = '#191714';
+                document.getElementById("h1").style.color = '#ece2d8';
+                document.getElementById("title").style.background="#191714";
+                document.getElementById("menu_box").style.background ='#DED2C8';
+                document.getElementById("cpbox").style.color = '#DED2C8';
+                document.getElementById("cpbox").style.background = '#3d3d3d';
+                document.getElementById("greeting").style.color = "#f4f2f1";
+            }
+            else{
+                document.getElementById(id).style.background = '#f4f2f1';
+                document.getElementById("h1").style.color = '#403C33';
+                document.getElementById("title").style.background ='#e7d7cf';
+                document.getElementById("menu_box").style.background ='';     
+                document.getElementById("cpbox").style.color = '#3d3d3d'; 
+                document.getElementById("cpbox").style.background = '#DED2C8'; 
+                document.getElementById("greeting").style.color = "#3d3d3d";      
+            }
+        }
+            
+        </script>
+        <header>
+            <div id="title">
+                <h1 id="h1">박채연의 소소한 정보들</h1>
+            </div>
+            <table id='menu_box' width="100%"> 
+                <tr>
+                    <td><a href="who.html"><p>나는 누구인가</p></a></td>
+                    <td><a href="profile.html">프로필</a></td>
+                    <td><a href="interest.html">관심사</a></td>
+                    <td><a href="bucket_list.html">버킷리스트</a></td>
+                    <td><a href="guest.html">방명록</a></td>
+                </tr>
+            </table>
+
+            <nav>메뉴   
+                <div id="menu_box_L">
+                    <a href="index.html">홈</a>
+                    <a href="who.html">나는 누구인가</a>
+                    <a href="profile.html">프로필</a>
+                    <a href="interest.html">관심사</a>
+                    <a href="bucket_list.html">버킷리스트</a>
+                    <a href="guest.html">방명록</a>
+                </div> 
+                <button id="sign" onclick="window.open('signin.html');">회원가입</button>
+                <div id="mode">                  
+                    <button onclick="darkmode('background', 'd');">☾ 다크모드</button>
+                    <button onclick="darkmode('background', 'l');">☼ 라이트모드</button><br><br>
+                </div>
+            </nav>
+        </header>
+
+        <div class="width">
+            <article>
+                <div id="guest_book" class="b_pic">
+                    <form method="post" action="guest.html">
+                        방명록을 남겨보세요~<br><br>
+                        <textarea id="guest_comment" name="comment" cols="150" rows="8" placeholder="내용을 입력해주세요"></textarea><br><br>
+                        <input type="file" name="file"/><br>
+                        <span id="onemore">암호를 입력하세요:</span> <input id="user_pw" type="password">
+                        <input id="user_pw2" type="password"><br>
+    
+                        <input id="savepw" onclick="savepassword();" type="button" value="저장하기"/>
+                        <input type="button" value="암호확인" onclick="savepassword();"/>
+                        <input  type="submit" value="새로고침">
+                    </form>
+                    <hr>
+                    <p>암호를 입력한 후 저장버튼을 누르면 방명록이 저장됩니다.<br>
+                    방명록을 확인하고 싶다면 저장한 암호를 다시 한 번 입력해주세요.</p>
+                    <hr>
+                    <p>방명록</p>
+                    <hr>
+                    <div id="useronly">
+                        <p id="text"></p>
+                        <p id="please"></p>
+                    </div>                 
+                </div>
+            </article> 
+        </div>   
+        <script type='text/javascript'> 
+
+        function upload(){
+            var now = new Date();
+            var year = now.getFullYear();
+            var month = now.getMonth()+1;
+            var date = now.getDate();
+            var hour = now.getHours();
+            var minute = now.getMinutes();
+            var second = now.getSeconds();
+
+            var comment = document.getElementById("guest_comment").value;
+            /*document.getElementById("g_num").innerHTML+=(i++);*/
+        
+            document.getElementById("please").innerHTML +='<div id="record"><h3>' + comment +'</h3><br>'+year+"년 "+month+"월 "+date+"일 "+hour+"시 "+minute+"분 "+second+"초에 작성함.<hr></div>";         
+        }
+
+        function savepassword(){  
+        var u1pw = document.getElementById("user_pw").value;
+        var u2pw = document.getElementById("user_pw2").value;
+        if(!u1pw){
+            alert("암호를 입력하지 않으면 방명록을 저장할 수 없습니다.");
+        }
+        else if(!u2pw){
+            upload();
+            document.getElementById("useronly").style.visibility="hidden";
+            document.getElementById("user_pw").style.visibility="hidden";
+            document.getElementById("user_pw2").style.visibility="visible";
+            document.getElementById("onemore").innerHTML ="암호를 한 번 더 입력한 후 <br>암호확인 버튼을 누르면 내용을 확인할 수 있습니다.";
+        }
+        else if(u2pw == u1pw){
+            document.getElementById("useronly").style.visibility="visible";
+            document.getElementById("guest_comment").value="";
+            document.getElementById("user_pw2").style.visibility="hidden";
+            document.getElementById("user_pw").style.visibility="visible";
+            document.getElementById("onemore").innerHTML ="암호를 입력하세요:";
+        }
+        else{
+            alert("잘못된 암호를 입력하셨습니다.");
+        }
+    }
+        
+        </script>
+
+    </body>
+    <footer>  
+        <div id="cpbox">
+            이 페이지는 박채연에 의해 작성되었습니다 &nbsp;&nbsp;&nbsp;&nbsp;<br>
+            ⓒPark Chaeyeon&nbsp;&nbsp;&nbsp;&nbsp;
+        </div>
+    </footer>
+</html>
